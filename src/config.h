@@ -104,6 +104,12 @@
     #define BL_OUTPUT_PIN 4
     #define BL_INPUT_BANK GPIOC
     #define BL_INPUT_PIN 15
+#elif defined(TARGET_BOOTLEG_REV_B)
+    /* ESC */
+    #define BL_OUTPUT_BANK GPIOC
+    #define BL_OUTPUT_PIN 4
+    #define BL_INPUT_BANK GPIOA
+    #define BL_INPUT_PIN 7
 #else
     #error "No config for this target"
 #endif
