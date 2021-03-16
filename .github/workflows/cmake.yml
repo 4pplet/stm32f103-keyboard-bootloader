@@ -23,7 +23,6 @@ jobs:
       run: mkdir ${{github.workspace}}/build && cd ${{github.workspace}}/build
 
       # Get the arm-non-eabi-gcc toolchain
-
     - uses: numworks/setup-arm-toolchain@2020-q2
         
     - name: Configure CMake
@@ -42,11 +41,11 @@ jobs:
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: make
     
-   # - name: Partly clean
-   #   working-directory: ${{github.workspace}}/bootloader/build
+    - name: Partly clean
+      working-directory: ${{github.workspace}}/build
       # shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
-  #    run: cd ${{github.workspace}}/bootloader/build/ && rm -r CMakeFiles && rm CMakeCache.txt && rm Makefile && rm cmake_install.cmake
+      run: rm -r CMakeFiles && rm CMakeCache.txt && rm Makefile && rm cmake_install.cmake
     
     - name: Archive
       uses: actions/upload-artifact@v2
