@@ -45,7 +45,7 @@ jobs:
       working-directory: ${{github.workspace}}/build
       # shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
-      run: rm -r CMakeFiles && rm CMakeCache.txt && rm Makefile && rm cmake_install.cmake
+      run: cd ${{github.workspace}}/build && rm -r CMakeFiles && rm CMakeCache.txt && rm Makefile && rm cmake_install.cmake
     
     - name: Archive
       uses: actions/upload-artifact@v2
